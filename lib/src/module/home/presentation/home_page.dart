@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -25,6 +27,22 @@ class _HomePageState extends State<HomePage> {
 
   getStudentGPA(gpa) {
     studentGPA = double.parse(gpa);
+  }
+
+  createData() {
+    log('create');
+  }
+
+  readData() {
+    log('read');
+  }
+
+  updateData() {
+    log('update');
+  }
+
+  deleteData() {
+    log('delet');
   }
 
   @override
@@ -56,7 +74,7 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(bottom: 8.0),
               child: TextFormField(
                 decoration: InputDecoration(
-                  labelText: 'Student',
+                  labelText: 'Student ID',
                   fillColor: Colors.white,
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.blue, width: 2.0),
@@ -71,7 +89,7 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(bottom: 8.0),
               child: TextFormField(
                 decoration: InputDecoration(
-                  labelText: 'Study Program Id',
+                  labelText: 'Study Program ID',
                   fillColor: Colors.white,
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.blue, width: 2.0),
@@ -97,6 +115,62 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      createData();
+                    },
+                    child: Text('Create'),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.green),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Read'),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.blue),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Update'),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.amber),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Delete'),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.red),
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
